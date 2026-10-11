@@ -194,9 +194,6 @@ the `notebooks` folder. Credentials must not be committed to GitHub.
 5. Create the measures and visuals in Power BI.
 6. Compare the unfiltered report totals with the SQL summaries.
 7. Test filters and inspect group sizes alongside payment problem rates.
-s
-Exact Snowflake loading instructions and Power BI measure documentation
-are still being completed.
 
 ## Limitations
 
