@@ -4,3 +4,5 @@ matplotlib
 seaborn
 scikit-learn
 jupyter
+snowflake-connector-python
+python-dotenv

@@ -1,0 +1,25 @@
+-- Total applications after filtering.
+Total Applications =
+COUNTROWS(Applications)
+
+-- Applications with payment problems. Show 0 instead of blank.
+Applications with Payment Problems =
+COALESCE(
+    CALCULATE(
+        [Total Applications],
+        Applications[TARGET] = 1
+    ),
+    0
+)
+
+-- Count used in the report card.
+Payment Problem Count =
+COALESCE([Applications with Payment Problems], 0)
+
+-- Share of applications with payment problems.
+-- Format as a percentage in Power BI.
+Payment Problem Percentage =
+DIVIDE(
+    [Payment Problem Count],
+    [Total Applications]
+)
