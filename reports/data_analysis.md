@@ -8,18 +8,13 @@ and investigates what financial averages hide.
 The tools have different responsibilities:
 
 - **Snowflake and SQL:** explore the source data, check its quality
-  and prepare the Power BI export.
 - **Python:** investigate financial distributions, extreme values
   and differences between TARGET groups.
-- **Power BI:** present key metrics and group comparisons interactively.
 
 ### Supporting Work
 
 - [SQL exploration](../sql/02_data_exploration.sql)
 - [Python analysis](../notebooks/01_data_understanding.ipynb)
-
-The Power BI report is presented separately. A screenshot and
-report documentation will be added to this repository.
 
 Machine learning is a possible future extension.
 
@@ -39,8 +34,6 @@ The data has been loaded into Snowflake as:
 The dataset contains information about applicants, including income,
 credit amount, loan annuity, demographic characteristics, employment,
 and other financial variables.
-
-The power BI export uses the followeing 13 columns
 
 ---
 
@@ -109,7 +102,7 @@ causation or demonstrate predictive performance.
 ## 5. Financial Distributions in Python
 
 The Python notebook examines financial distributions to complement
-the SQL summaries and Power BI report.
+the SQL summaries.
 
 ### Credit Amount
 
@@ -150,37 +143,6 @@ so annuity does not clearly separate the groups in this analysis.
 AMT_ANNUITY has 12 missing values. These remain missing and are
 excluded from its numerical summaries rather than replaced with zero.
 
-## 6. Group Comparisons in Power BI
-
-The Power BI report presents application counts and payment problem
-rates by income type, with a contract type slicer and a gender comparison.
-Selecting a group allows its metrics to be explored.
-
-### Rates and Group Sizes
-
-Payment problem rates should be interpreted alongside the number
-of applications in each group.
-
-For example, Maternity leave has 2 applications with payment problems
-out of 5 applications, giving a rate of 40%. This high rate is based
-on a very small group and should not support a broad conclusion.
-
-The scatter plot displays group size against payment problem rate
-to make this context visible.
-
-### Gender Comparison
-
-The observed payment problem rate is approximately 7.00% for F
-and 10.14% for M in the unfiltered report.
-
-These are descriptive differences within the dataset. They do not
-establish that gender causes payment problems or account for other
-differences between the groups.
-
-XNA values are excluded from the gender visual.
-
-![Power BI report overview](../PowerBI/Screenshots/overview.png)
-
 ## 7. Findings and Limitations
 
 ### Main Findings
@@ -211,9 +173,8 @@ XNA values are excluded from the gender visual.
 
 ### Conclusion
 
-SQL provides the data checks and summaries, Python investigates
-financial distributions, and Power BI makes group comparisons
-accessible through an interactive report.
+SQL provides the data checks and summaries and Python investigates
+financial distributions
 
 The analysis highlights the importance of considering group sizes
 and distributions alongside averages and percentages.

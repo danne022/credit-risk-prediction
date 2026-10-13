@@ -77,13 +77,8 @@ Public access is currently restricted by university account settings.
 credit-risk-prediction/
 ├── sql/
 │   ├── 01_setup.sql
-│   └── 02_csv_powerBI.sql
 ├── notebooks/
 │   └── 01_data_understanding.ipynb
-├── PowerBi/
-│   ├── measures.dax
-│   └── Screenshots/
-│       └── overview.png
 ├── reports/
 │   └── data_analysis.md
 ├── data/
@@ -96,14 +91,12 @@ credit-risk-prediction/
 
 - **sql:** Snowflake setup, source exploration, report export and validation.
 - **notebooks:** Financial distributions and TARGET group comparisons.
-- **PowerBi:** Report screenshots and supporting documentation.
 - **reports:** Findings, interpretation and limitations.
 - **data:** Local data folders; source files and extracts are excluded from Git.
 
 ## Explore the Analysis
 
 - [SQL database setup](sql/01_setup.sql)
-- [SQL export for Power BI](sql/02_csv_powerBI.sql)
 - [Python data understanding and Power BI validation](notebooks/01_data_understanding.ipynb)
 - [Detailed findings and limitations](reports/data_analysis.md)
 
@@ -147,7 +140,6 @@ for TARGET 1. TARGET 0 also has higher annuities at the 75th and
 
 ## Data Handling and Validation
 
-- SQL summaries provide reference values for checking Power BI metrics.
 - Python checks identify missing financial values.
 - The 12 missing annuity values remain missing and are excluded from
   numerical annuity summaries.
@@ -184,16 +176,6 @@ for TARGET 1. TARGET 0 also has higher annuities at the 75th and
 
 The notebook uses `../.env`, so its working directory should be
 the `notebooks` folder. Credentials must not be committed to GitHub.
-
-### Power BI Report
-
-1. Run the SQL export query to produce the selected 13 columns.
-2. Save the exported CSV in OneDrive.
-3. Connect Power Query to the CSV.
-4. Promote the headers and verify column types and decimal parsing.
-5. Create the measures and visuals in Power BI.
-6. Compare the unfiltered report totals with the SQL summaries.
-7. Test filters and inspect group sizes alongside payment problem rates.
 
 ## Limitations
 
